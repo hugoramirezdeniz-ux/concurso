@@ -1,123 +1,819 @@
-<!doctype html>
-<html lang="es-ES">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Instrucciones — Fase Previa Clasificatoria ULPGC‑DAEA 2025‑26</title>
-  <meta name="description" content="Instrucciones para el alumnado participante en la fase previa clasificatoria del concurso ULPGC‑DAEA 2025‑26.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rally Parking GC 2026</title>
   <style>
-    :root{
-      --brand:#004a87;       /* Azul institucional aproximado */
-      --brand-2:#00a0df;     /* Complementario */
-      --ink:#0f172a;         /* Texto */
-      --muted:#475569;       /* Texto secundario */
-      --bg:#ffffff;          /* Fondo */
-      --card:#f8fafc;        /* Fondo tarjetas */
-      --ring:#e2e8f0;        /* Bordes */
-    }
-    html,body{height:100%}
-    body{
-      margin:0; background:var(--bg); color:var(--ink); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif; line-height:1.55;
-    }
-    .container{max-width:880px; margin-inline:auto; padding:24px;}
-    header{display:flex; align-items:center; gap:16px; border-bottom:1px solid var(--ring); padding-bottom:16px;}
-    .brandmark{display:flex; align-items:center; gap:16px;}
-    .brandmark img{height:64px; width:auto; object-fit:contain}
-    .brandmark .org{font-weight:700; font-size:1.1rem; color:var(--brand)}
-    h1{font-size:clamp(1.4rem, 2.2vw + 1rem, 2rem); margin:16px 0 0}
-    .lead{color:var(--muted); margin-top:6px}
-
-    .notice{
-      margin:20px 0; padding:16px; background:var(--card); border:1px solid var(--ring); border-radius:12px
-    }
-    .notice strong{color:var(--brand)}
-
-    ol.instructions{counter-reset:item; padding-left:0; margin:0}
-    ol.instructions > li{
-      list-style:none; display:grid; grid-template-columns:auto 1fr; align-items:start; gap:14px; padding:16px; margin:14px 0; border:1px solid var(--ring); border-radius:12px; background:white;
-    }
-    ol.instructions > li::before{
-      counter-increment:item; content:counter(item); display:inline-grid; place-items:center; width:36px; height:36px; font-weight:700; color:white; background:var(--brand); border-radius:999px;
+    :root {
+      --orange: #ff6a00;
+      --orange-2: #ff8f1f;
+      --black: #0f0f10;
+      --black-2: #1b1b1d;
+      --white: #f8f8f8;
+      --gray: #bfbfbf;
+      --card: rgba(18, 18, 20, 0.88);
+      --stroke: rgba(255, 255, 255, 0.08);
+      --shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
     }
 
-    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px}
-    .btn{appearance:none; -webkit-appearance:none; border:1px solid var(--brand); background:var(--brand); color:white; padding:12px 18px; border-radius:10px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:10px}
-    .btn.secondary{background:white; color:var(--brand);}
-    .btn:hover{filter:brightness(0.96)}
+    * { box-sizing: border-box; }
 
-    footer{margin-top:40px; padding-top:16px; border-top:1px solid var(--ring); color:var(--muted); font-size:0.95rem}
-    footer a{color:var(--brand)}
+    html {
+      scroll-behavior: smooth;
+    }
 
-    /* Accesible focus */
-    :focus-visible{outline:3px solid var(--brand-2); outline-offset:3px; border-radius:6px}
+    body {
+      margin: 0;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 106, 0, 0.35), transparent 24%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 20%),
+        linear-gradient(180deg, #141416 0%, #0d0d0e 45%, #111112 100%);
+      color: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-    /* Modo impresión */
-    @media print{
-      .actions, header{display:none}
-      body{color:black}
-      .container{padding:0}
-      ol.instructions > li{break-inside:avoid}
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    body::before {
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.09) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,106,0,0.12) 1px, transparent 1px);
+      background-size: 26px 26px, 34px 34px;
+      background-position: 0 0, 12px 14px;
+      opacity: 0.18;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 34px 0 60px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255, 106, 0, 0.92) 0%, rgba(255, 106, 0, 0.82) 20%, rgba(255, 106, 0, 0.08) 46%, rgba(0, 0, 0, 0.65) 100%),
+        url('https://images.unsplash.com/photo-1517846693594-1567da72af75?auto=format&fit=crop&w=1600&q=80') center/cover;
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      z-index: -2;
+      filter: saturate(1.15) contrast(1.04);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.48));
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      z-index: -1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0 24px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+    }
+
+    .brand-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--orange), var(--orange-2));
+      color: var(--black);
+      box-shadow: var(--shadow);
+      font-size: 1.1rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 10px 14px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      text-shadow: 0 5px 22px rgba(0, 0, 0, 0.42);
+      letter-spacing: 0.02em;
+    }
+
+    .accent {
+      color: var(--orange);
+      -webkit-text-stroke: 1px rgba(0,0,0,0.2);
+    }
+
+    .hero-copy p {
+      margin: 22px 0 0;
+      max-width: 760px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(145deg, var(--orange), var(--orange-2));
+      color: var(--black);
+    }
+
+    .btn-secondary {
+      background: rgba(0, 0, 0, 0.62);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .info-panel {
+      background: rgba(10, 10, 11, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 28px;
+      padding: 24px;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+
+    .stat span,
+    .info-panel p,
+    .small {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.88);
+      font-weight: 700;
+    }
+
+    main {
+      padding-bottom: 56px;
+    }
+
+    section {
+      margin-top: 42px;
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+    }
+
+    .section-head .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      background: rgba(255, 106, 0, 0.14);
+      color: #ffb06b;
+      border: 1px solid rgba(255, 106, 0, 0.28);
+      border-radius: 999px;
+      margin-bottom: 12px;
+      font-size: 0.86rem;
+      letter-spacing: 0.08em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .subtext {
+      max-width: 780px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.6;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .tab-btn {
+      min-height: 50px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: 0.2s ease;
+      font: inherit;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: linear-gradient(145deg, var(--orange), var(--orange-2));
+      color: var(--black);
+      border-color: transparent;
+    }
+
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.22s ease;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+    }
+
+    .price-box,
+    .summary-box,
+    .contact-card,
+    .map-card,
+    .benefit {
+      border-radius: 20px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .price-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.34);
+      border: 1px solid rgba(255,255,255,0.05);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+    }
+
+    .price-row span:last-child {
+      color: var(--orange);
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .selector {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+    }
+
+    .selector label {
+      display: grid;
+      gap: 8px;
+    }
+
+    select {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #151517;
+      color: var(--white);
+      padding: 0 14px;
+      font: inherit;
+      font-weight: 700;
+    }
+
+    .quote {
+      margin-top: 14px;
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(255,106,0,0.18), rgba(255,143,31,0.1));
+      border: 1px solid rgba(255,106,0,0.24);
+    }
+
+    .quote strong {
+      display: block;
+      color: var(--orange);
+      font-size: 2rem;
+      margin-top: 6px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .benefit h3,
+    .map-card h3,
+    .contact-card h3,
+    .summary-box h3,
+    .price-box h3 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+      text-transform: uppercase;
+    }
+
+    .benefit p,
+    .map-card p,
+    .contact-card p,
+    .summary-box p,
+    .price-box p,
+    .contact-meta,
+    .list {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.86);
+      font-weight: 700;
+    }
+
+    .map-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+    }
+
+    .contact-item a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #ffbc7a;
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .vehicle-grid,
+      .features,
+      .map-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-bottom: 44px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 18px, 1180px);
+      }
+
+      h1 {
+        font-size: clamp(2.45rem, 12vw, 4rem);
+      }
+
+      h2 {
+        font-size: clamp(1.7rem, 9vw, 2.5rem);
+      }
+
+      .panel,
+      .info-panel,
+      .price-box,
+      .summary-box,
+      .benefit,
+      .map-card,
+      .contact-card {
+        padding: 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brandmark" aria-label="ULPGC — DAEA">
-        <!-- Sustituye la ruta de la imagen por el recurso oficial del logo -->
-        <img src="Captura.PNG" alt="Logo ULPGC — DAEA">
-        <div>
-          <div class="org">ULPGC · Departamento de Análisis Económico Aplicado (DAEA)</div>
-          <h1>Fase previa clasificatoria · Concurso ULPGC‑DAEA 2025‑26</h1>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-badge">🏁</div>
+          <div>
+            <strong>Rally Parking GC 2026</strong><br />
+            Tramo Ingenio · Valsequillo
+          </div>
+        </div>
+        <a class="btn btn-secondary" href="#tarifas">Consultar tarifas</a>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">WRC Islas Canarias 2026 · Aparcamiento para espectadores</div>
+          <h1>
+            Reserva tu plaza<br />
+            <span class="accent">cerca del rally</span>
+          </h1>
+          <p>
+            Web promocional con estética inspirada en el cartel: diseño potente, colores naranja, negro y blanco, y acceso rápido a la información clave. Consulta precios por tipo de vehículo y por número de días, y accede a los datos de contacto para formalizar tu reserva.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#tarifas">Ver precios</a>
+            <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Ingenio+Valsequillo+Gran+Canaria" target="_blank" rel="noopener noreferrer">Ver ubicación en Maps</a>
+          </div>
+        </div>
+
+        <aside class="info-panel">
+          <h3 style="margin:0; font-size:1.8rem; text-transform:uppercase;">Información rápida</h3>
+          <p style="margin-top:10px;">
+            Plazas limitadas, acceso cómodo y reserva directa por teléfono, WhatsApp o correo. La estructura está preparada para que puedas cambiar fácilmente tarifas, enlace de Maps y datos de contacto.
+          </p>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>23–26</strong>
+              <span>Días disponibles del evento</span>
+            </div>
+            <div class="stat">
+              <strong>3</strong>
+              <span>Tipos de vehículo</span>
+            </div>
+            <div class="stat">
+              <strong>4</strong>
+              <span>Opciones de estancia</span>
+            </div>
+            <div class="stat">
+              <strong>100%</strong>
+              <span>HTML, CSS y JS en un solo archivo</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="section-head">
+        <span class="tag">Aparcamiento</span>
+        <h2>Ventajas del parking</h2>
+        <p class="subtext">
+          Presentación visual clara para visitantes del tramo. El diseño replica el lenguaje gráfico de un cartel de rally: bloques contundentes, alto contraste, llamadas a la acción y navegación sencilla.
+        </p>
+      </div>
+      <div class="features">
+        <article class="benefit">
+          <h3>Acceso directo</h3>
+          <p>Ideal para llegar sin complicaciones al entorno del tramo, con un mensaje comercial rápido y visual.</p>
+        </article>
+        <article class="benefit">
+          <h3>Tarifas claras</h3>
+          <p>Consulta inmediata por tipo de vehículo y duración de estancia, sin menús complejos ni pasos innecesarios.</p>
+        </article>
+        <article class="benefit">
+          <h3>Reserva rápida</h3>
+          <p>Última pestaña dedicada al contacto, lista para enlazar con WhatsApp, teléfono, email o formulario externo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="tarifas">
+      <div class="section-head">
+        <span class="tag">Tarifas</span>
+        <h2>Consulta precios por vehículo y días</h2>
+        <p class="subtext">
+          Se incluyen tres pestañas: <strong>Turismo</strong>, <strong>Camper</strong> y <strong>Autocaravana</strong>. En cada una puedes ver una tabla de precios y un pequeño calculador para seleccionar la duración.
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="tabs" role="tablist" aria-label="Tipos de vehículo">
+          <button class="tab-btn active" data-tab="turismo">Turismo</button>
+          <button class="tab-btn" data-tab="camper">Camper</button>
+          <button class="tab-btn" data-tab="autocaravana">Autocaravana</button>
+          <button class="tab-btn" data-tab="reserva">Reserva</button>
+        </div>
+
+        <div class="tab-pane active" id="turismo">
+          <div class="vehicle-grid">
+            <div class="price-box">
+              <h3>Tarifas · Turismo</h3>
+              <p>Ejemplo editable para coche convencional. Cambia estos importes en el objeto <strong>prices</strong> del script si quieres adaptar la web a tus tarifas reales.</p>
+              <div class="price-list">
+                <div class="price-row"><span>1 día</span><span>12 €</span></div>
+                <div class="price-row"><span>2 días</span><span>20 €</span></div>
+                <div class="price-row"><span>3 días</span><span>27 €</span></div>
+                <div class="price-row"><span>4 días</span><span>34 €</span></div>
+              </div>
+            </div>
+            <div class="summary-box">
+              <h3>Calcula tu precio</h3>
+              <p>Selecciona la duración y obtén el importe orientativo de reserva para turismo.</p>
+              <div class="selector">
+                <label>
+                  Número de días
+                  <select data-vehicle="turismo">
+                    <option value="1">1 día</option>
+                    <option value="2">2 días</option>
+                    <option value="3">3 días</option>
+                    <option value="4">4 días</option>
+                  </select>
+                </label>
+              </div>
+              <div class="quote">
+                Precio estimado
+                <strong id="quote-turismo">12 €</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="camper">
+          <div class="vehicle-grid">
+            <div class="price-box">
+              <h3>Tarifas · Camper</h3>
+              <p>Configuración pensada para furgonetas camper. Puedes renombrar la categoría o ajustar escalones de precio sin tocar la estructura visual.</p>
+              <div class="price-list">
+                <div class="price-row"><span>1 día</span><span>18 €</span></div>
+                <div class="price-row"><span>2 días</span><span>32 €</span></div>
+                <div class="price-row"><span>3 días</span><span>44 €</span></div>
+                <div class="price-row"><span>4 días</span><span>56 €</span></div>
+              </div>
+            </div>
+            <div class="summary-box">
+              <h3>Calcula tu precio</h3>
+              <p>Selecciona la duración y obtén el importe orientativo de reserva para camper.</p>
+              <div class="selector">
+                <label>
+                  Número de días
+                  <select data-vehicle="camper">
+                    <option value="1">1 día</option>
+                    <option value="2">2 días</option>
+                    <option value="3">3 días</option>
+                    <option value="4">4 días</option>
+                  </select>
+                </label>
+              </div>
+              <div class="quote">
+                Precio estimado
+                <strong id="quote-camper">18 €</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="autocaravana">
+          <div class="vehicle-grid">
+            <div class="price-box">
+              <h3>Tarifas · Autocaravana</h3>
+              <p>Bloque orientado a vehículos de mayor tamaño, manteniendo la coherencia comercial de toda la web.</p>
+              <div class="price-list">
+                <div class="price-row"><span>1 día</span><span>24 €</span></div>
+                <div class="price-row"><span>2 días</span><span>44 €</span></div>
+                <div class="price-row"><span>3 días</span><span>62 €</span></div>
+                <div class="price-row"><span>4 días</span><span>78 €</span></div>
+              </div>
+            </div>
+            <div class="summary-box">
+              <h3>Calcula tu precio</h3>
+              <p>Selecciona la duración y obtén el importe orientativo de reserva para autocaravana.</p>
+              <div class="selector">
+                <label>
+                  Número de días
+                  <select data-vehicle="autocaravana">
+                    <option value="1">1 día</option>
+                    <option value="2">2 días</option>
+                    <option value="3">3 días</option>
+                    <option value="4">4 días</option>
+                  </select>
+                </label>
+              </div>
+              <div class="quote">
+                Precio estimado
+                <strong id="quote-autocaravana">24 €</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="reserva">
+          <div class="contact-grid">
+            <article class="contact-card">
+              <h3>Datos de contacto</h3>
+              <p>Última pestaña dedicada a la reserva. Al ser una web estática en HTML, lo más eficaz es dirigir la conversión a canales directos de contacto.</p>
+              <div class="contact-list">
+                <div class="contact-item">📞 Teléfono: <a href="tel:+34600123456">+34 600 123 456</a></div>
+                <div class="contact-item">💬 WhatsApp: <a href="https://wa.me/34600123456" target="_blank" rel="noopener noreferrer">Enviar mensaje</a></div>
+                <div class="contact-item">✉️ Email: <a href="mailto:reservas@rallyparkinggc2026.com">reservas@rallyparkinggc2026.com</a></div>
+                <div class="contact-item">🌐 Web: <a href="https://rallyparkinggc2026.com" target="_blank" rel="noopener noreferrer">rallyparkinggc2026.com</a></div>
+              </div>
+            </article>
+
+            <article class="contact-card">
+              <h3>Cómo reservar</h3>
+              <p class="list">
+                1. Indica tipo de vehículo.<br />
+                2. Especifica número de días.<br />
+                3. Envía nombre, matrícula y teléfono de contacto.<br />
+                4. Recibe confirmación y ubicación exacta del acceso.
+              </p>
+              <div class="hero-actions" style="margin-top:18px;">
+                <a class="btn btn-primary" href="https://wa.me/34600123456?text=Hola%2C%20quiero%20reservar%20una%20plaza%20para%20el%20parking%20del%20rally." target="_blank" rel="noopener noreferrer">Reservar por WhatsApp</a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <div class="notice" role="note">
-          El concurso ha finalizado</em>.
-    </div>
+    <section>
+      <div class="section-head">
+        <span class="tag">Ubicación</span>
+        <h2>Enlace a Maps del aparcamiento</h2>
+        <p class="subtext">
+          En portada ya aparece un acceso directo a Google Maps. Aquí puedes reforzarlo con una segunda llamada a la acción. Sustituye el enlace por la ubicación exacta cuando dispongas de ella.
+        </p>
+      </div>
+      <div class="map-grid">
+        <article class="map-card">
+          <h3>Ubicación rápida</h3>
+          <p>
+            Actualmente el botón apunta a una búsqueda genérica entre Ingenio y Valsequillo en Gran Canaria. Para una versión final conviene reemplazarlo por un enlace con coordenadas exactas del parking.
+          </p>
+          <div class="hero-actions" style="margin-top:18px;">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Ingenio+Valsequillo+Gran+Canaria" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+          </div>
+        </article>
+        <article class="map-card">
+          <h3>Personalización sugerida</h3>
+          <p>
+            Puedes cambiar fácilmente: título del evento, fechas, tipos de vehículo, precios, CTA de reserva, datos de contacto y enlace de ubicación. Todo está concentrado en un único archivo para facilitar su despliegue.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-    <ol class="instructions">
-      <li>
-        <div>
-          La Nota de Corte ha sido <strong>1800 puntos</strong>.
-        </div>
-      </li>
-      <li>
-        <div>
-          Si Vd. obtuvo una nota igual o superior, felicidades por ello. Podrá acceder a la fase final.
-      </li>
-      <li>
-        <div>
-          La información estará disponible en la web del DAEA (daea.ulpgc.es) y, también, en la Vicedirección de su Centro.
-        </div>
-      </li>
-    </ol>
+  <footer>
+    Rally Parking GC 2026 · Diseño promocional HTML inspirado en cartelería de rally.
+  </footer>
 
-    <div class="actions">
-      <!-- Sustituye # por la URL real del concurso -->
-      <a class="btn" href="https://daea.ulpgc.es/" aria-label="https://daea.ulpgc.es/">Web DAEA</a>
-      <button class="btn secondary" type="button" onclick="window.print()" aria-label="Imprimir o guardar en PDF">Imprimir / Guardar en PDF</button>
-    </div>
+  <script>
+    const prices = {
+      turismo: { 1: 12, 2: 20, 3: 27, 4: 34 },
+      camper: { 1: 18, 2: 32, 3: 44, 4: 56 },
+      autocaravana: { 1: 24, 2: 44, 3: 62, 4: 78 }
+    };
 
-    <footer>
-      <p>
-        Última actualización: <time datetime="2025-11-07">7 de noviembre de 2025</time>.
-      </p>
-    </footer>
-  </div>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.tab;
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('select[data-vehicle]').forEach(select => {
+      select.addEventListener('change', event => {
+        const vehicle = event.target.dataset.vehicle;
+        const days = event.target.value;
+        const amount = prices[vehicle][days];
+        document.getElementById(`quote-${vehicle}`).textContent = `${amount} €`;
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
