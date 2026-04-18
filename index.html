@@ -6,15 +6,22 @@
   <title>Rally Parking GC 2026</title>
   <style>
     :root {
-      --orange: #ff6a00;
-      --orange-2: #ff8f1f;
-      --black: #0f0f10;
-      --black-2: #1b1b1d;
-      --white: #f8f8f8;
-      --gray: #bfbfbf;
-      --card: rgba(18, 18, 20, 0.88);
-      --stroke: rgba(255, 255, 255, 0.08);
-      --shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+      --bg: #ffffff;
+      --surface: #f7fafc;
+      --surface-2: #eef4f8;
+      --card: #ffffff;
+      --text: #1f2a35;
+      --text-soft: #5f6f7f;
+      --blue: #2f5d86;
+      --blue-2: #4f7fa7;
+      --blue-soft: #dce8f2;
+      --blue-line: #d6e2ec;
+      --orange: #e96a1c;
+      --orange-2: #f09a5a;
+      --orange-soft: #fff1e7;
+      --white: #ffffff;
+      --shadow: 0 14px 36px rgba(31, 42, 53, 0.08);
+      --shadow-soft: 0 8px 24px rgba(31, 42, 53, 0.06);
       --radius: 22px;
     }
 
@@ -27,31 +34,21 @@
     body {
       margin: 0;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(255, 106, 0, 0.35), transparent 24%),
-        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 20%),
-        linear-gradient(180deg, #141416 0%, #0d0d0e 45%, #111112 100%);
-      color: var(--white);
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    body::before,
-    body::after {
+    body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
       z-index: -1;
-    }
-
-    body::before {
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,0.09) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,106,0,0.12) 1px, transparent 1px);
-      background-size: 26px 26px, 34px 34px;
-      background-position: 0 0, 12px 14px;
-      opacity: 0.18;
+      background:
+        radial-gradient(circle at top left, rgba(233, 106, 28, 0.05), transparent 24%),
+        radial-gradient(circle at top right, rgba(47, 93, 134, 0.06), transparent 22%);
     }
 
     .wrap {
@@ -61,31 +58,23 @@
 
     .hero {
       position: relative;
-      min-height: 92vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
       padding: 34px 0 60px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
       background:
-        linear-gradient(120deg, rgba(255, 106, 0, 0.92) 0%, rgba(255, 106, 0, 0.82) 20%, rgba(255, 106, 0, 0.08) 46%, rgba(0, 0, 0, 0.65) 100%),
+        linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.98)),
         url('https://images.unsplash.com/photo-1517846693594-1567da72af75?auto=format&fit=crop&w=1600&q=80') center/cover;
-      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-      z-index: -2;
-      filter: saturate(1.15) contrast(1.04);
+      border-bottom: 1px solid var(--blue-line);
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.48));
-      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-      z-index: -1;
+      inset: auto 0 0 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+      opacity: 0.9;
     }
 
     .topbar {
@@ -104,6 +93,7 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
       font-size: 0.95rem;
+      color: var(--text);
     }
 
     .brand-badge {
@@ -112,9 +102,9 @@
       border-radius: 16px;
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, var(--orange), var(--orange-2));
-      color: var(--black);
-      box-shadow: var(--shadow);
+      background: linear-gradient(145deg, var(--blue), var(--blue-2));
+      color: var(--white);
+      box-shadow: var(--shadow-soft);
       font-size: 1.1rem;
     }
 
@@ -129,8 +119,9 @@
       display: inline-block;
       margin-bottom: 14px;
       padding: 10px 14px;
-      background: rgba(0, 0, 0, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: var(--surface-2);
+      border: 1px solid var(--blue-line);
+      color: var(--blue);
       border-radius: 999px;
       font-size: 0.9rem;
       letter-spacing: 0.08em;
@@ -141,13 +132,12 @@
       font-size: clamp(3rem, 7vw, 5.8rem);
       line-height: 0.95;
       text-transform: uppercase;
-      text-shadow: 0 5px 22px rgba(0, 0, 0, 0.42);
       letter-spacing: 0.02em;
+      color: var(--blue);
     }
 
     .accent {
       color: var(--orange);
-      -webkit-text-stroke: 1px rgba(0,0,0,0.2);
     }
 
     .hero-copy p {
@@ -156,7 +146,7 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1.08rem;
       line-height: 1.6;
-      color: rgba(255, 255, 255, 0.92);
+      color: var(--text-soft);
       font-weight: 600;
     }
 
@@ -179,8 +169,8 @@
       text-transform: uppercase;
       font-size: 0.95rem;
       letter-spacing: 0.06em;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+      box-shadow: var(--shadow-soft);
       cursor: pointer;
       border: none;
     }
@@ -191,18 +181,22 @@
 
     .btn-primary {
       background: linear-gradient(145deg, var(--orange), var(--orange-2));
-      color: var(--black);
+      color: var(--white);
     }
 
     .btn-secondary {
-      background: rgba(0, 0, 0, 0.62);
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: var(--white);
+      color: var(--blue);
+      border: 1px solid var(--blue-line);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface);
     }
 
     .info-panel {
-      background: rgba(10, 10, 11, 0.76);
-      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--blue-line);
       border-radius: 28px;
       padding: 24px;
       backdrop-filter: blur(8px);
@@ -219,13 +213,13 @@
     .stat {
       padding: 18px;
       border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--surface);
+      border: 1px solid var(--blue-line);
     }
 
     .stat strong {
       display: block;
-      font-size: 1.45rem;
+      font-size: 1.2rem;
       color: var(--orange);
       margin-bottom: 6px;
     }
@@ -235,8 +229,9 @@
     .small {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.55;
-      color: rgba(255,255,255,0.88);
+      color: var(--text-soft);
       font-weight: 700;
+      white-space: pre-line;
     }
 
     main {
@@ -254,9 +249,9 @@
     .section-head .tag {
       display: inline-block;
       padding: 8px 12px;
-      background: rgba(255, 106, 0, 0.14);
-      color: #ffb06b;
-      border: 1px solid rgba(255, 106, 0, 0.28);
+      background: var(--orange-soft);
+      color: var(--orange);
+      border: 1px solid rgba(233, 106, 28, 0.18);
       border-radius: 999px;
       margin-bottom: 12px;
       font-size: 0.86rem;
@@ -268,12 +263,13 @@
       font-size: clamp(2rem, 4vw, 3.4rem);
       line-height: 1;
       text-transform: uppercase;
+      color: var(--blue);
     }
 
     .subtext {
       max-width: 780px;
       font-family: Arial, Helvetica, sans-serif;
-      color: rgba(255,255,255,0.82);
+      color: var(--text-soft);
       line-height: 1.6;
       margin-top: 12px;
       font-weight: 700;
@@ -281,7 +277,7 @@
 
     .panel {
       background: var(--card);
-      border: 1px solid var(--stroke);
+      border: 1px solid var(--blue-line);
       border-radius: var(--radius);
       padding: 24px;
       box-shadow: var(--shadow);
@@ -298,9 +294,9 @@
       min-height: 50px;
       padding: 0 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.04);
-      color: var(--white);
+      border: 1px solid var(--blue-line);
+      background: var(--surface);
+      color: var(--blue);
       text-transform: uppercase;
       letter-spacing: 0.06em;
       cursor: pointer;
@@ -310,8 +306,8 @@
 
     .tab-btn.active,
     .tab-btn:hover {
-      background: linear-gradient(145deg, var(--orange), var(--orange-2));
-      color: var(--black);
+      background: linear-gradient(145deg, var(--blue), var(--blue-2));
+      color: var(--white);
       border-color: transparent;
     }
 
@@ -342,8 +338,9 @@
     .benefit {
       border-radius: 20px;
       padding: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--white);
+      border: 1px solid var(--blue-line);
+      box-shadow: var(--shadow-soft);
     }
 
     .price-list {
@@ -359,10 +356,11 @@
       align-items: center;
       padding: 14px 16px;
       border-radius: 16px;
-      background: rgba(0,0,0,0.34);
-      border: 1px solid rgba(255,255,255,0.05);
+      background: var(--surface);
+      border: 1px solid var(--blue-line);
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 700;
+      color: var(--text);
     }
 
     .price-row span:last-child {
@@ -377,6 +375,7 @@
       margin-top: 16px;
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 700;
+      color: var(--text);
     }
 
     .selector label {
@@ -388,20 +387,27 @@
       width: 100%;
       min-height: 52px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: #151517;
-      color: var(--white);
+      border: 1px solid var(--blue-line);
+      background: var(--white);
+      color: var(--text);
       padding: 0 14px;
       font: inherit;
       font-weight: 700;
+      outline: none;
+    }
+
+    select:focus {
+      border-color: var(--blue-2);
+      box-shadow: 0 0 0 4px rgba(79, 127, 167, 0.12);
     }
 
     .quote {
       margin-top: 14px;
       padding: 18px;
       border-radius: 16px;
-      background: linear-gradient(145deg, rgba(255,106,0,0.18), rgba(255,143,31,0.1));
-      border: 1px solid rgba(255,106,0,0.24);
+      background: var(--orange-soft);
+      border: 1px solid rgba(233, 106, 28, 0.18);
+      color: var(--text);
     }
 
     .quote strong {
@@ -425,6 +431,7 @@
       margin: 0 0 10px;
       font-size: 1.45rem;
       text-transform: uppercase;
+      color: var(--blue);
     }
 
     .benefit p,
@@ -437,7 +444,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
-      color: rgba(255,255,255,0.86);
+      color: var(--text-soft);
       font-weight: 700;
     }
 
@@ -457,27 +464,30 @@
     .contact-item {
       padding: 14px 16px;
       border-radius: 14px;
-      background: rgba(0,0,0,0.28);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--surface);
+      border: 1px solid var(--blue-line);
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 700;
+      color: var(--text);
     }
 
     .contact-item a {
-      color: var(--white);
+      color: var(--blue);
       text-decoration: none;
     }
 
     .contact-item a:hover {
-      color: #ffbc7a;
+      color: var(--orange);
     }
 
     footer {
       padding: 28px 0 48px;
       text-align: center;
-      color: rgba(255,255,255,0.6);
+      color: var(--text-soft);
       font-family: Arial, Helvetica, sans-serif;
       font-weight: 700;
+      border-top: 1px solid var(--blue-line);
+      margin-top: 34px;
     }
 
     @media (max-width: 980px) {
@@ -551,7 +561,7 @@
         </div>
 
         <aside class="info-panel">
-          <h3 style="margin:0; font-size:1.8rem; text-transform:uppercase;">Información rápida</h3>
+          <h3 style="margin:0; font-size:1.8rem; text-transform:uppercase; color: var(--blue);">Información rápida</h3>
           <p style="margin-top:10px;">
             Plazas limitadas, acceso directo y cómodo junto al tramo y amplia zona de espectadores. Reserva directa a través de WhatsApp o correo.
           </p>
@@ -563,14 +573,14 @@
             <div class="stat">
               <strong>Reserva</strong>
               <span>parkingrallyvalsequillo@gmail.com
-              +34 647 11 94 92</span>
++34 647 11 94 92</span>
             </div>
             <div class="stat">
               <strong>Todo tipo de vehículos</strong>
               <span>Plazas según tipo de vehículo</span>
             </div>
             <div class="stat">
-              <strong>Consulta Ofertas</strong>
+              <strong>Consulta ofertas</strong>
               <span>Para varios días de estancia o grupos</span>
             </div>
           </div>
@@ -584,12 +594,11 @@
       <div class="section-head">
         <span class="tag">Aparcamiento</span>
         <h2>Ventajas del parking</h2>
-        <p class="subtext">
-        </p>
+        <p class="subtext"></p>
       </div>
       <div class="features">
         <article class="benefit">
-          <h3>Acceso directo </h3>
+          <h3>Acceso directo</h3>
           <p>Ubicación junto a zona de espectadores, ideal para disfrutar con comodidad del tramo.</p>
         </article>
         <article class="benefit">
@@ -598,7 +607,7 @@
         </article>
         <article class="benefit">
           <h3>Reserva rápida</h3>
-          <p> Contacta con nosotros por whatssap o correo.</p>
+          <p>Contacta con nosotros por WhatsApp o correo.</p>
         </article>
       </div>
     </section>
@@ -607,8 +616,7 @@
       <div class="section-head">
         <span class="tag">Tarifas</span>
         <h2>Consulta precios por vehículo y días</h2>
-        <p class="subtext">
-           </p>
+        <p class="subtext"></p>
       </div>
 
       <div class="panel">
@@ -623,7 +631,7 @@
           <div class="vehicle-grid">
             <div class="price-box">
               <h3>Tarifas · Turismo</h3>
-            <div class="price-list">
+              <div class="price-list">
                 <div class="price-row"><span>1 día</span><span>20 €</span></div>
                 <div class="price-row"><span>2 días</span><span>30 €</span></div>
               </div>
@@ -654,7 +662,7 @@
               <h3>Tarifas · Camper</h3>
               <div class="price-list">
                 <div class="price-row"><span>1 día</span><span>25 €</span></div>
-                <div class="price-row"><span>2 días</span><span>40€</span></div>
+                <div class="price-row"><span>2 días</span><span>40 €</span></div>
               </div>
             </div>
             <div class="summary-box">
@@ -681,9 +689,9 @@
           <div class="vehicle-grid">
             <div class="price-box">
               <h3>Tarifas · Autocaravana</h3>
-                <div class="price-list">
-                <div class="price-row"><span>1 día</span><span>40€ </span></div>
-                <div class="price-row"><span>2 días</span><span>70€ </span></div>
+              <div class="price-list">
+                <div class="price-row"><span>1 día</span><span>40 €</span></div>
+                <div class="price-row"><span>2 días</span><span>70 €</span></div>
               </div>
             </div>
             <div class="summary-box">
@@ -710,7 +718,7 @@
           <div class="contact-grid">
             <article class="contact-card">
               <h3>Datos de contacto</h3>
-             <div class="contact-list">
+              <div class="contact-list">
                 <div class="contact-item">📞 Teléfono: <a href="tel:+34600123456">+34 600 123 456</a></div>
                 <div class="contact-item">💬 WhatsApp: <a href="https://wa.me/34600123456" target="_blank" rel="noopener noreferrer">Enviar mensaje</a></div>
                 <div class="contact-item">✉️ Email: <a href="mailto:reservas@rallyparkinggc2026.com">reservas@rallyparkinggc2026.com</a></div>
@@ -769,9 +777,9 @@
 
   <script>
     const prices = {
-      turismo: { 1: 12, 2: 20, 3: 27, 4: 34 },
-      camper: { 1: 18, 2: 32, 3: 44, 4: 56 },
-      autocaravana: { 1: 24, 2: 44, 3: 62, 4: 78 }
+      turismo: { 1: 20, 2: 30 },
+      camper: { 1: 25, 2: 40 },
+      autocaravana: { 1: 40, 2: 70 }
     };
 
     const tabButtons = document.querySelectorAll('.tab-btn');
